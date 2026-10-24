@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+  
+  
+  <style>
+        :root {
+            --bg-color: #670E10;
+            --card-bg: #112b3e;
+            --text-color: #f8fafc;
+            --accent-color: #FFD700;
+            --text-muted: #c4aa01;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* Sets the image path */
+            background-image: url('IMG_72549ffd-5a59-4774-942c-1f0693b92c69.jpg'); /* Use exact filename case-sensitive */
+            background-repeat: no-repeat;    /* Prevents the image from repeating */
+            background-size: cover;          /* Forces image to scale across screen */
+            background-position: center;     /* Centers the background image */
+            background-attachment: fixed;
+            color: var(--text-color);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 1rem 1rem;
+        }
+
+        header h1 {
+            font-size: 1.8rem;
+            color: var(--accent-color);
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.1rem;
+            padding: 0.5rem;
+            background: #FFD700(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #670E10;
+            flex-wrap: wrap;
+        }
+
+        nav button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        nav button.active, nav button:hover {
+            background: var(--accent-color);
+            color: var(--bg-color);
+        }
+
+        /* Main Content Area */
+        main {
+            flex: 1;
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Cards & Styling */
+        .card {
+            background-color:#670E10;
+            padding: 1.5rem;
+            border-radius: 1px;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 10px 10px -1px #FFD700(0, 0, 0, 0.1);
+            border: 1px solid #FFD700;
+        }
+
+        h2 {
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            color: var(--accent-color);
+            border-bottom: 2px solid #FFD700;
+            padding-bottom: 0.5rem;
+        }
+
+        p {
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .author {
+            text-align: right;
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-style: italic;
+            margin-bottom: 0;
+        }
+
+        /* Photo Grid for 2 Photos */
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.2rem;
+            margin-top: 1rem;
+        }
+
+        .photo-item {
+            background: #334155;
+            height: 200px;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            border: 2px dashed #64748b;
+            overflow: hidden;
+            position: relative;
+        }
+
+      
+    .circle-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #FFD700
+    }
+  
+
+        /* To use actual images, add <img src="your-image.jpg"> inside .photo-item and give it class="photo-img" */
+        .photo-img {
+            width: 100%;
+            height: 20%;
+            object-fit: cover;
+            border: 4px solid #FFD700
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid #334155;
+        }
+    </style>
+<body>
+
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+  <nav>
+        <button class="tab-btn active" onclick="switchTab(event, 'home')">Home</button>
+        <button class="tab-btn" onclick="switchTab(event, 'about')">About Me</button>
+        <button class="tab-btn" onclick="switchTab(event, 'achievements')">Achievements</button>
+        <button class="tab-btn" onclick="switchTab(event, 'testimonials')">Testimonials</button>
+        <button class="tab-btn" onclick="switchTab(event, 'works')">Works</button>
+        <button class="tab-btn" onclick="switchTab(event, 'blog')">Blog</button>
+  </nav>
+    <main>
+    <section id="home" class="tab-content active">
+        <div class="card">
+          <center>
+          <img src="IMG_20261023_202617.jpg" class="circle-img">
+          </center>
+          <h3 align="center">I'M</h3>
+          <h2 align="center">Charles Aaron B. Saddi</h2>
+          <p>Wellcome to my Porfolio! head to the navigation bar to know more about me</p>
+        </div> 
+    </section>  
+        <section id="about" class="tab-content">       
+                <h2 align="center">About Me</h2>
+          <div class="card">
+                <h2 align="center">Age:</h2>
+            <h3 align="center">16</h3>
+            <h2 align="center">School:</h2>
+            <h3 align="center">GIST</h3>
+            <h2 align="center">Addres:</h2>
+            <h3>Antipolo/Mambugan/siruna/phase1</h3>
+          
+            <h2 align="center">My hobbies</h2>
+            <h3 align="center">playing video games</h3>
+          
+          
+            <h3 align="center" style="color:#FFD700">Note</h3>
+                <p>Hello! im currently stuying in GIST and im taking the strand ICT, i love gaming and my dream is to make one someday </p>
+          </div>
+                
+          
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="tab-content">
+            <div class="card">
+                <h2 align="center">Achievements</h2>
+                <strong style="color:#FFD700">Achivers:</strong><p> mentaining a consitent grades in every subject.</p>
+                <strong style="color:#FFD700">Programming Projects:</strong> <p>have enough knowledge and skills about Programming to do a good and decent projects.</p>
+                <strong style="color:#FFD700">artistic skills:</strong> <p>have decent drawing artistic skills .</p>
+            </div>
+          
+        </section>
+
+        <!-- Testimonials Section (3 Testimonials) -->
+        <section id="testimonials" class="tab-content">
+            <div class="card">
+                <h2>Testimonial 1</h2>
+                <p>"pasaway at nagagalit pag inuotusan pero sumusunod naman at naaasahan sa gawaing bahay."</p>
+                <p class="author">- Nanay</p>
+            </div>
+
+            <div class="card">
+                <h2>Testimonial 2</h2>
+                <p>"Madaling makausap at napapagkatiwalaan pero minsan may pagka loko-loko"</p>
+                <p class="author">-Kaibigan</p>
+            </div>
+
+            <div class="card">
+                <h2>Testimonial 3</h2>
+                <p>"Tahimik sa klase, madaldal minsan subalit kayang makipagsabayan sa kanyang mga kamag aral."</p>
+                <p class="author">-PKLP Teacher</p>
+            </div>       
+        </section>
+         <section id="works" class ="tab-content">
+           <h2 align="center">Best Work</h2>
+           <div class="card">
+             <img src="IMG_20261023_202835.png" class="photo-img">
+             <h2 align="center">Miniature house</h2>
+             <p>My best work is that i make miniture house in 10th grade that have roof valley and have 5 rooms in total and full of furniture inside although i only got 93 and not a 100 because of expose melted glue stick im very proud of it and i consider it my best work</p>
+           </div>
+           <div class="card">
+             <img src="IMG_20261023_202759.png" class="photo-img">
+             <h2 align="center">Examination Coding</h2>
+             <p>i also considere this one of my best work because i made this long code my self, this code have 1000+ line</p>
+           </div>
+         </section>
+        <section id="blog" class ="tab-content">
+          <div class="card">
+<h2 align="center">My Blog</h2>
+<button class="btn" onclick="toggle('blogC',this)" style="color:#FFD700;background:#0f172a""">Show ▼</button>
+<button class="btn" style="background:#0f172a;color:#FFD700" onclick="document.getElementById('addBlog').style.display='block'">+ New Post</button>
+
+<div id="blogC" class="content show">
+  <!-- ADD BLOG FORM (hidden at first) -->
+  <div id="addBlog" style="display:none;background:#0f172a;border:2px dashed var(--gold);padding:15px;border-radius:10px;margin-bottom:15px">
+    <input id="blogTitle" placeholder="Blog Title: e.g. My First Week Coding" style="width:100%;padding:10px;border:1px solid #ecdab3;border-radius:8px;margin-bottom:8px">
+    <textarea id="blogText" placeholder="Write your blog here..." rows="4" style="width:100%;padding:10px;border:1px solid #ecdab3;border-radius:8px;margin-bottom:8px"></textarea>
+    <input id="blogDate" type="date" style="padding:8px;border:1px solid #FFD700;border-radius:8px">
+    <button class="btn" onclick="addPost()">Post It</button>
+    <button class="btn" onclick="document.getElementById('addBlog').style.display='none'">Cancel</button>
+  </div>
+
+  
+  <div id="blogList"></div>
+</div>
+</div>
+
+<script>
+let blogs = JSON.parse(localStorage.getItem('myBlogs') || '[]');
+if(blogs.length==0){
+  // Default blogs if empty
+  blogs = [
+    {title:"My dream", date:"2026-Oct-23", text:"my dream is to make my own game base on ideas thats why i stuying ict"},
+    {title:"My Path", date:"2026-Sep-1", text:"i plan to to take ICT in junior high, take IT in college and hopefully have enough knoledge to make a simple game."},
+    {title:"Built with grit, gilded with grace", date:"2027-03-10", text:"My catchphrase. Means you work hard but you present like a pro. Gothic font made it perfect."}
+  ];
+}
+
+function renderBlogs(){
+  const list = document.getElementById('blogList');
+  if(!list) return;
+  if(blogs.length==0){ list.innerHTML="<p>No blogs yet. Click + New Post!</p>"; return; }
+  list.innerHTML = blogs.map((b,i)=>`
+    <div style="background:#0f172a;border-left:5px solid var(--gold);padding:14px;border-radius:8px;margin:12px 0">
+      <div style="display:flex;justify-content:space-between"><b style="color:var(--maroon);font-family:'Cinzel',serif">${b.title}</b><small style="color:var(--gold)">${b.date}</small></div>
+      <p style="margin-top:8px;font-size:14px">${b.text}</p>
+      <button onclick="deletePost(${i})" style="margin-top:8px;background:none;border:1px solid #5b1e16;color:#FFD700;padding:4px 10px;border-radius:12px;font-size:11px;cursor:pointer">Delete</button>
+    </div>
+  `).join('');
+}
+
+function addPost(){
+  const t=document.getElementById('blogTitle').value.trim();
+  const txt=document.getElementById('blogText').value.trim();
+  const d=document.getElementById('blogDate').value || new Date().toISOString().split('T')[0];
+  if(!t || !txt){ alert("Add title and text!"); return; }
+  blogs.unshift({title:t, text:txt, date:d});
+  localStorage.setItem('myBlogs', JSON.stringify(blogs));
+  document.getElementById('blogTitle').value=""; document.getElementById('blogText').value="";
+  document.getElementById('addBlog').style.display='none';
+  renderBlogs();
+}
+
+function deletePost(i){
+  if(confirm("Delete this blog?")){ blogs.splice(i,1); localStorage.setItem('myBlogs', JSON.stringify(blogs)); renderBlogs(); }
+}
+
+// Render on load
+setTimeout(renderBlogs, 500);
+</script>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; Made By Charles Aaron B. Saddi.</p>
+    </footer>
+
+    <!-- JavaScript for Tab Switching -->
+    <script>
+        function switchTab(event, tabId) {            // Hide all tab contents
+          const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => content.classList.remove('active'));
+
+            // Remove active class from all buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => button.classList.remove('active'));
+
+            // Show current tab and set button to active
+            document.getElementById(tabId).classList.add('active');
+            event.currentTarget.classList.add('active');
+
+          
+        }
+    </script>
+</body>
+</html>
